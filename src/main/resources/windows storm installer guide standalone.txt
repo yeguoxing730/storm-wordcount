@@ -1,0 +1,42 @@
+﻿http://www.acgist.com/article/426.html
+http://blog.csdn.net/liuxinghao/article/details/50555252
+
+tips:
+ http://blog.csdn.net/wfzczangpeng/article/details/52711389
+
+step1:download zookeeper3.4.10
+ D:\storm-env\zk3410
+ mkdir D:\storm-env\zk3410\log
+ mkdir D:\storm-env\zk3410\data
+ vi D:\storm-env\zk3410\conf\zoo.cfg
+        dataDir=D:\\storm-env\\zk3410\\data
+	dataLogDir=D:\\storm-env\\zk3410\\log
+	
+	新增环境变量ZOOKEEPER_HOME并设置为D:\storm-env\zk3410\，
+	在Path里新增%ZOOKEEPER_HOME%\bin。打开cmd命令行窗口，
+	进入D:\storm-env\zk3410\bin执行zkServier.cmd启动zk
+step2.download python 2.7
+path里面添加python路径
+ D:\storm-env\python27;D:\storm-env\python27\Scripts\;D:\storm-env\python27\Lib\site-packages\;
+
+
+step3:download storm1.1.1
+ D:\storm-env\storm111
+  STORM_HOME D:\storm-env\storm111
+  path %STORM_HOME%\bin
+  
+ vi D:\storm-env\storm111\bin\strom-config.cmd新增%STORM_HOME%到
+    FOR /F "delims=" %%i in (%CMD_TEMP_FILE%) do (
+    FOR /F "tokens=1,* delims= " %%a in ("%%i") do (
+        if %%a == VALUE: (
+            set STORM_LOG4J2_CONFIGURATION_DIR=%STORM_HOME%\%%b
+            del /F %CMD_TEMP_FILE%)
+        )
+    )
+)
+ cd D:\storm-env\storm111\bin 
+   start nimbus       storm nimbus
+   start supervisor   storm supervisor
+   start storm ui     storm ui 
+   
+   storm kill
