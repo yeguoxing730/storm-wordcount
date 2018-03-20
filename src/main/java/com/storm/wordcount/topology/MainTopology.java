@@ -6,9 +6,7 @@ import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.topology.TopologyBuilder;
 
-/**
- * Created by yeguoxing on 2018/3/19.
- */
+
 public class MainTopology {
     public void runLocal(int waitSeconds,String[] args) {
         TopologyBuilder builder = new TopologyBuilder();

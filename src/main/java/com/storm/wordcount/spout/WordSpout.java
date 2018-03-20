@@ -9,9 +9,7 @@ import org.apache.storm.tuple.Values;
 
 import java.util.Map;
 
-/**
- * Created by yeguoxing on 2018/3/19.
- */
+
 public class WordSpout extends BaseRichSpout {
     private SpoutOutputCollector collector;
     private String[] words = {"hello","world","storm","study"};//单词池

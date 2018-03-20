@@ -10,9 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by yeguoxing on 2018/3/19.
- */
+
 public class CountBolt extends BaseRichBolt {
     private HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 

@@ -12,9 +12,7 @@ import org.apache.storm.tuple.Values;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by yeguoxing on 2018/3/19.
- */
+
 public class LineBolt extends BaseBasicBolt {
     private HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 
